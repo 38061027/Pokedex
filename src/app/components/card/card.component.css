@@ -20,12 +20,17 @@
 }
 
 .card__body{
+  display: flex;
   background-color: #616161;
   width: 90%;
   margin-left: auto;
   margin-right: auto;
   height: 70%;
+  align-items: center;
+  justify-content: center;
 }
+
+
 
 .card_stats{
   padding: 10px 0 10px 0;
