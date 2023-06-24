@@ -22,7 +22,7 @@ export class PokemonService{
     .http
     .get<PokemonData>
     (`${this.baseUrl}${pokemonName}`)
-    
+
     return this.pokeData
   }
 

@@ -8,36 +8,30 @@ import { PokemonService } from 'src/app/services/pokemon.service';
   styleUrls: ['./card.component.css'],
 })
 export class CardComponent implements OnInit {
-  pokemon: PokemonData ;
+  pokemons: PokemonData[] = [];
 
-
-
-  constructor(private service: PokemonService) {
-    this.pokemon = { id: 0,name: '',
-      sprites: {
-        front_default: ''},
-      types: []
-    };
-  }
+  constructor(private service: PokemonService) {}
 
   ngOnInit(): void {
-    this.getPokemon('pikachu')
+    this.getPokemons();
   }
 
-  getPokemon(searchName: string){
-    this.service.getPokemon(searchName).subscribe({
-      next: (res) => {
-        this.pokemon = {
-          id: res.id,
-          name: res.name,
-          sprites: res.sprites,
-          types: res.types,
-        };
+  getPokemons(): void {
+    const pokemonNames: string[] = ['pikachu', 'charizard', 'venusaur', 'bulbasaur' ,'squirtle','charmeleon'];
 
-
-      },
-      error: (err) => console.log('Não consigui achar nem com visãoraio X', err),
+    pokemonNames.forEach((name) => {
+      this.service.getPokemon(name).subscribe({
+        next: (res) => {
+          const pokemon: PokemonData = {
+            id: res.id,
+            name: res.name,
+            sprites: res.sprites,
+            types: res.types,
+          };
+          this.pokemons.push(pokemon);
+        },
+        error: (err) => console.log('Não consegui encontrar o Pokémon', err),
+      });
     });
   }
-
 }
