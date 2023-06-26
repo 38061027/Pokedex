@@ -17,7 +17,7 @@ export class CardComponent implements OnInit {
   }
 
   getPokemons(): void {
-    const pokemonNames: string[] = ['pikachu', 'charizard', 'venusaur', 'bulbasaur' ,'squirtle','charmeleon'];
+    const pokemonNames: string[] = ['pikachu', 'charizard', 'venusaur', 'bulbasaur' ,'squirtle','charmeleon','arceus','lugia', 'mewtwo', 'palkia', 'caterpie', 'groudon'];
 
     pokemonNames.forEach((name) => {
       this.service.getPokemon(name).subscribe({
