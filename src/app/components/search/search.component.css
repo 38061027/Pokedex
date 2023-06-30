@@ -1,0 +1,38 @@
+
+
+.container{
+  display: flex;
+ justify-content: center;
+ align-items: center;
+width: 100%;
+flex-direction: column;
+gap: 20px;
+  padding-top: 10px;
+}
+
+.card{
+  display: flex;
+  flex-direction: column;
+  background-color: #49D0B0;
+  width: 200px;
+  height: 200px;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.card_stats{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.card_stats .card__stats__type{
+  padding: 5px;
+  border-radius: 5px;
+  background-color: coral;
+
+}
+
+.input-search input{
+  padding: 10px;
+}

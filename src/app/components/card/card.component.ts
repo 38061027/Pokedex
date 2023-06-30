@@ -10,18 +10,21 @@ import { PokemonService } from 'src/app/services/pokemon.service';
 export class CardComponent implements OnInit {
   pokemons: PokemonData[] = [];
 
-  constructor(private service: PokemonService) {}
+  constructor(private pokemonService: PokemonService) {}
 
   ngOnInit(): void {
     this.getPokemons();
+
   }
+
 
   getPokemons(): void {
     const pokemonNames: string[] = ['pikachu', 'charizard', 'venusaur', 'bulbasaur' ,'squirtle','charmeleon','arceus','lugia', 'mewtwo', 'palkia', 'caterpie', 'groudon'];
 
     pokemonNames.forEach((name) => {
-      this.service.getPokemon(name).subscribe({
+      this.pokemonService.getPokemon(name).subscribe({
         next: (res) => {
+
           const pokemon: PokemonData = {
             id: res.id,
             name: res.name,
@@ -34,4 +37,11 @@ export class CardComponent implements OnInit {
       });
     });
   }
+
+
+
+
+
+
+
 }

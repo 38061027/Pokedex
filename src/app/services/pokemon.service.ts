@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, tap, map } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { PokemonData } from '../models/pokemonData';
 
@@ -11,6 +11,9 @@ export class PokemonService{
 
   private baseUrl: string = ""
   private pokeData: PokemonData | any
+
+  private PokeAll: PokemonData | any
+
 
   constructor(private http: HttpClient) {
     this.baseUrl = environment.pokeApi
@@ -25,6 +28,16 @@ export class PokemonService{
 
     return this.pokeData
   }
+
+
+  getAllPokemon(): Observable<any> {
+   return this.http.get<any>(this.baseUrl).pipe(
+    map(res => res.results)
+   )
+
+
+    }
+
 
 
 }

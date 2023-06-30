@@ -1,6 +1,9 @@
 
 
-<div class="pokedex__title_app"> <h1>Pokedex</h1></div>
+<app-search></app-search>
+
+
+
 
 <div class="card__container">
 
@@ -11,19 +14,21 @@
         <h3>{{pokemon.name}}</h3>
       </div>
 
-<div class="body_card">
+      <div class="body_card">
 
-  <div class="card_stats">
-    <span class="card__stats__type" *ngFor="let t of pokemon.types">
-      {{t.type.name}}
-    </span>
-  </div>
+        <div class="card_stats">
+          <span class="card__stats__type" *ngFor="let t of pokemon.types">
+            {{t.type.name}}
+          </span>
+        </div>
 
         <div class="card__img">
           <img [src]="pokemon.sprites.front_default" alt="pokemon">
         </div>
 
-</div>
+      </div>
     </div>
   </div>
 </div>
+
+
