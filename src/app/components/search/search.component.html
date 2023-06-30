@@ -8,7 +8,8 @@
 
 
       <mat-form-field class="input-search">
-        <input matInput type="text" (input)="getPokemon($any($event.target).value)" placeholder="Procure pokemons">
+        <mat-label>Procure pokemons</mat-label>
+        <input matInput type="text" (input)="getPokemon($any($event.target).value)" >
       </mat-form-field>
 
 
