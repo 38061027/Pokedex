@@ -6,13 +6,13 @@
 
 
 
-
       <mat-form-field class="input-search">
         <mat-label>Procure pokemons</mat-label>
-        <input matInput type="text" (input)="getPokemon($any($event.target).value)" >
+        <input matInput type="text"
+
+        (input)="getPokemon($any($event.target).value.toLowerCase())" >
+
       </mat-form-field>
-
-
 
 
 

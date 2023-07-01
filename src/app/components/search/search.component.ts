@@ -9,7 +9,6 @@ import { PokemonService } from 'src/app/services/pokemon.service';
 })
 export class SearchComponent implements OnInit{
 
-  allPokemon: any[] = [];
   pokemon: PokemonData | any ;
 
   constructor (private pokemonService: PokemonService){
@@ -23,13 +22,8 @@ export class SearchComponent implements OnInit{
 
 ngOnInit(): void {
 
-    // this.pokemonService.getAllPokemon().subscribe(pokemons => {
-    //   this.allPokemon = pokemons;
-    //   console.log(pokemons)
-    // });
 
     this.getPokemon('charizard')
-
 
   }
 
@@ -45,9 +39,14 @@ ngOnInit(): void {
 
 
           },
-          error: (err) => console.log('Não consigui achar nem com visãoraio X', err),
+          error: (err) => console.log('Não consigui achar nem com visão raio X', err),
         });
+
+
       }
+
+
+      
 
 
 

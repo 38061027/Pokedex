@@ -33,3 +33,15 @@ gap: 20px;
 
 }
 
+.input-search{
+  width: 50%;
+}
+
+
+@media screen and (max-width:500px) {
+
+
+  .input-search{
+    width: 100%;
+  }
+}

@@ -12,7 +12,6 @@ export class PokemonService{
   private baseUrl: string = ""
   private pokeData: PokemonData | any
 
-  private PokeAll: PokemonData | any
 
 
   constructor(private http: HttpClient) {
@@ -28,15 +27,6 @@ export class PokemonService{
 
     return this.pokeData
   }
-
-
-  getAllPokemon(): Observable<any> {
-   return this.http.get<any>(this.baseUrl).pipe(
-    map(res => res.results)
-   )
-
-
-    }
 
 
 
