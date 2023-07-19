@@ -10,6 +10,7 @@ import { SearchComponent } from './components/search/search.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material/material.module';
 
+
 const COMPONENTS = [
   CardComponent,
   SearchComponent
@@ -18,7 +19,8 @@ const COMPONENTS = [
 @NgModule({
   declarations: [
     AppComponent,
-    COMPONENTS
+    COMPONENTS,
+
   ],
   imports: [
     BrowserModule,

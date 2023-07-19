@@ -9,9 +9,7 @@
       <mat-form-field class="input-search">
         <mat-label>Procure pokemons</mat-label>
         <input matInput type="text"
-
         (input)="getPokemon($any($event.target).value.toLowerCase())" >
-
       </mat-form-field>
 
 
@@ -32,6 +30,11 @@
 
         <span class="card__stats__type" *ngFor="let t of pokemon.types">
           {{t.type.name}}
+
+          <span *ngFor="let i of pokemon.stats">
+            {{i.stat.name}}
+            {{i.base_stat}}
+          </span>
         </span>
 
 

@@ -10,8 +10,14 @@ type:{
 name: string
 url:string
 }
-}[]
+}[],
 
+ stats: {
+     stat: {
+      name: string;
+     };
+     base_stat:number
+   }[];
 
 
 }

@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   template:`
 
-  <app-card></app-card>
+<app-card></app-card>
+
   <router-outlet></router-outlet>`,
   styleUrls: ['./app.component.css']
 })

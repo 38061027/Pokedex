@@ -6,8 +6,9 @@
 
   display: flex;
   width: 100%;
-  height: 100vh;
+
   justify-content: center;
+  background-color: #333;
 
 }
 
@@ -34,10 +35,23 @@
  background-color: #49D0B0;
   display: flex;
   flex-direction: column;
-  width: 200px;
-  height: 200px;
+  width: 280px;
+  height: 480px;
   border-radius: 10px;
 
+}
+.card__pokemon__ind .top{
+height: 50%;
+
+}
+.card__pokemon__ind .bottom-content{
+  border-top-left-radius: 1.2rem;
+  border-top-right-radius: 1.2rem;
+  display: flex;
+height: 50%;
+  background-color: #eee;
+  align-items: center;
+  flex-direction: column;
 }
 
 .card__img{
@@ -84,7 +98,7 @@
 
   .card__pokemon{
   justify-content: center;
-    
+
   }
 
   .card__pokemon__ind{
