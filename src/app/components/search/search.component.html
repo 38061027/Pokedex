@@ -15,29 +15,33 @@
 
 
       <div class="card">
-
-       <div class="card__title">
-
-        <h3> {{pokemon.name}} </h3>
-       </div>
-
-       <div class="card__body">
-
-          <img [src]="pokemon.sprites.front_default" alt="pokemon">
-       </div>
-
-       <div class="card_stats">
-
-        <span class="card__stats__type" *ngFor="let t of pokemon.types">
-          {{t.type.name}}
-
-          <span *ngFor="let i of pokemon.stats">
-            {{i.stat.name}}
-            {{i.base_stat}}
+<div class="card-top">
+  
+         <div class="card__title">
+  
+          <h3> {{pokemon.name}} </h3>
+         </div>
+  
+         <div class="card__body">
+  
+            <img [src]="pokemon.sprites.front_default" alt="pokemon">
+         </div>
+  
+         <div class="card_stats">
+  
+          <span class="card__stats__type" *ngFor="let t of pokemon.types">
+            {{t.type.name}}
+  
+           
           </span>
-        </span>
+  
+  
+         </div>
+</div>
 
-
+       <div class="card-bottom">
+        <app-tabs [pokemonsTab]="pokemon"></app-tabs>
+      
        </div>
 
       </div>

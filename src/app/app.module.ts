@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { SearchComponent } from './components/search/search.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material/material.module';
+import { TabsComponent } from './components/tabs/tabs.component';
 
 
 const COMPONENTS = [
@@ -20,6 +21,8 @@ const COMPONENTS = [
   declarations: [
     AppComponent,
     COMPONENTS,
+    TabsComponent,
+
 
   ],
   imports: [
@@ -28,7 +31,8 @@ const COMPONENTS = [
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

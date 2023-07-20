@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { PokemonData } from 'src/app/models/pokemonData';
 import { PokemonService } from 'src/app/services/pokemon.service';
 
@@ -9,15 +9,20 @@ import { PokemonService } from 'src/app/services/pokemon.service';
 })
 export class SearchComponent implements OnInit{
 
- pokemon: PokemonData | any ;
+
+  @Output() pokemon: PokemonData | any ;
 
   constructor (private pokemonService: PokemonService){
     this.pokemon = { id: 0,name: '',
     sprites: {
       front_default: ''},
     types: [],
-
+   
+    
+ 
   };
+
+
   }
 
 
@@ -36,7 +41,9 @@ ngOnInit(): void {
               name: res.name,
               sprites: res.sprites,
               types: res.types,
-
+              stats: res.stats,
+              moves: res.moves,
+              
             };
 
 

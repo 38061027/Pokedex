@@ -17,7 +17,13 @@ url:string
       name: string;
      };
      base_stat:number
-   }[];
+   }[],
 
+ moves:{
+  move:{
+    name:string,
+
+  }
+ }[]
 
 }

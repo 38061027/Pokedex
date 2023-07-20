@@ -8,7 +8,7 @@ import { PokemonService } from 'src/app/services/pokemon.service';
   styleUrls: ['./card.component.css'],
 })
 export class CardComponent implements OnInit {
-pokemons: PokemonData[] = [];
+@Output() pokemons: PokemonData[] = [];
 
   constructor(private pokemonService: PokemonService) {}
 
@@ -30,7 +30,8 @@ pokemons: PokemonData[] = [];
             name: res.name,
             sprites: res.sprites,
             types: res.types,
-            stats: res.stats
+            stats: res.stats,
+            moves: res.moves
           };
           this.pokemons.push(pokemon);
         },

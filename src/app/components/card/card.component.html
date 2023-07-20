@@ -10,7 +10,7 @@
 
   <div class="card__pokemon">
     <div class="card__pokemon__ind" *ngFor="let pokemon of pokemons">
-<div class="top">
+
 
 
           <div class="card__title">
@@ -26,22 +26,11 @@
               <img [src]="pokemon.sprites.front_default" alt="pokemon">
             </div>
         </div>
-</div>
 
 
 
 
-        <div class="bottom-content">
-        <p>Base stats</p>
 
-<div class="bottom" *ngFor="let p of pokemon.stats">
-
-            <p>
-              {{p.stat.name}} {{p.base_stat}}
-            </p>
-</div>
-
-        </div>
 
 
 

@@ -1,0 +1,26 @@
+
+
+.container{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+ padding: 10px;
+}
+.container ul{
+  display: flex;
+  list-style: none;
+  text-decoration: none;
+  justify-content: space-evenly;
+  padding: 0;
+}
+.container ul li a{
+
+  text-decoration: none;
+}
+.container .stats{
+  display: flex;
+  flex-direction: row;
+justify-content: center;
+align-items: center;
+gap: 5px;
+}
