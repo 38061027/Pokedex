@@ -1,13 +1,32 @@
 <div class="container" >
   <ul>
-
-    <li (click)="showTab(1)"><a href="#">Base Stats</a></li>
-    <li (click)="showTab(2)"><a href="#">Moves</a></li>
+    <li (click)="showTab(1)"><a href="#">About</a></li>
+    <li (click)="showTab(2)"><a href="#">Base Stats</a></li>
+    <li (click)="showTab(3)"><a href="#">Moves</a></li>
+    <li (click)="showTab(4)"><a href="#">Abilities</a></li>
   </ul>
 
 
 
-  <div *ngIf="activeTab === 1">
+
+
+
+
+    <div class="content-about" *ngIf="activeTab === 1" >
+
+        <p>
+          {{  pokemonsTab.height }}
+        </p>
+
+
+        <p>
+          {{pokemonsTab.weight }}
+        </p>
+  </div>
+
+
+
+  <div class="content-stats" *ngIf="activeTab === 2">
 
 
 
@@ -19,7 +38,7 @@
 
 
 
-        <mat-progress-bar class="progress-bar"  mode="determinate" [value]="i.base_stat"></mat-progress-bar>
+        <mat-progress-bar class="progress-bar"  mode="determinate" [value]="i.base_stat" [color]="color"></mat-progress-bar>
 
     </div>
 
@@ -28,7 +47,7 @@
 
 
 
-  <div *ngIf="activeTab === 2">
+  <div class="content-moves" *ngIf="activeTab === 3">
 
 
   <p *ngFor="let i of pokemonsTab.moves.slice(0,6)" >
@@ -38,5 +57,14 @@
 
 
   </div>
+
+
+
+    <div class="content-abilities" *ngIf="activeTab === 4" >
+        <p *ngFor="let u of pokemonsTab.abilities">
+          {{u.ability.name}}
+        </p>
+    </div>
+
 
 </div>

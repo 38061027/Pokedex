@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ThemePalette } from '@angular/material/core';
+import { ProgressBarMode } from '@angular/material/progress-bar';
 import { PokemonData } from 'src/app/models/pokemonData';
 import { PokemonService } from 'src/app/services/pokemon.service';
 
@@ -9,27 +11,14 @@ import { PokemonService } from 'src/app/services/pokemon.service';
 })
 export class TabsComponent implements OnInit{
 
+  color: ThemePalette = 'warn';
+
+
   @Input() pokemonsTab: PokemonData | any
 
-  poke: any[] = [];
-
-  constructor(private pokeService: PokemonService){
-
-
-  }
-
-
-  getPoke(){
-    this.pokeService.getSpeciesData().subscribe(
-     res => this.poke = res.chain.evolves_to
-
-
-
-    )
-  }
 
 ngOnInit(): void {
-  this.getPoke()
+  
 
 }
 

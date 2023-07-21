@@ -4,7 +4,8 @@
   display: flex;
   flex-direction: column;
   height: 100%;
- padding: 10px;
+ padding: 0rem 0.6rem;;
+
 }
 .container ul{
   display: flex;
@@ -41,4 +42,12 @@ gap: 5px;
 .container .stats .progress-bar{
   width: 40%;
 
+}
+
+.container .content-stats{
+  display: flex;
+  flex-direction: column;
+    height: 100%;
+  justify-content: center;
+gap: 0.6rem;
 }

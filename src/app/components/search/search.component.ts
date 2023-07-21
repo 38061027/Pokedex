@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { PokemonData } from 'src/app/models/pokemonData';
 import { PokemonService } from 'src/app/services/pokemon.service';
 
@@ -17,9 +17,9 @@ export class SearchComponent implements OnInit{
     sprites: {
       front_default: ''},
     types: [],
-   
-    
- 
+
+
+
   };
 
 
@@ -36,6 +36,7 @@ ngOnInit(): void {
       getPokemon(searchName: string){
         this.pokemonService.getPokemon(searchName).subscribe({
           next: (res) => {
+
             this.pokemon = {
               id: res.id,
               name: res.name,
@@ -43,8 +44,12 @@ ngOnInit(): void {
               types: res.types,
               stats: res.stats,
               moves: res.moves,
-              
+              abilities: res.abilities,
+              height: res.height,
+              weight: res.weight
             };
+
+
 
 
           },

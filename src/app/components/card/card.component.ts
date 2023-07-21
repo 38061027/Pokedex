@@ -19,7 +19,7 @@ export class CardComponent implements OnInit {
 
 
   getPokemons(): void {
-    const pokemonNames: string[] = ['pikachu', 'charizard', 'venusaur', 'bulbasaur' ,'squirtle','charmeleon','arceus','lugia', 'mewtwo', 'palkia', 'caterpie', 'groudon'];
+    const pokemonNames: string[] = ['pikachu', 'machamp', 'venusaur', 'arbok' ,'blastoise','golbat','arceus','lugia', 'mewtwo', 'palkia', 'beedrill', 'groudon'];
 
     pokemonNames.forEach((name) => {
       this.pokemonService.getPokemon(name).subscribe({
@@ -31,7 +31,10 @@ export class CardComponent implements OnInit {
             sprites: res.sprites,
             types: res.types,
             stats: res.stats,
-            moves: res.moves
+            moves: res.moves,
+            abilities: res.abilities,
+            height: res.height,
+            weight: res.weight
           };
           this.pokemons.push(pokemon);
         },

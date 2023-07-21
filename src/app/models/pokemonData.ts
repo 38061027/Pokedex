@@ -26,6 +26,14 @@ url:string
   }
  }[],
 
+ abilities:{
+  ability:{
+    name: string
+  }
+ },
+
+ height: number,
+ weight:number
 
 
 
