@@ -1,42 +1,39 @@
 <div class="container" >
   <ul>
-    <!-- <li (click)="showTab(1)"><a href="#">About</a></li> -->
-    <li (click)="showTab(2)"><a href="#">Base Stats</a></li>
-    <!-- <li (click)="showTab(3)"><a href="#">Evolution</a></li> -->
-    <li (click)="showTab(4)"><a href="#">Moves</a></li>
+
+    <li (click)="showTab(1)"><a href="#">Base Stats</a></li>
+    <li (click)="showTab(2)"><a href="#">Moves</a></li>
   </ul>
 
-  <!-- <div *ngIf="activeTab === 1">
-   <p >
-    About
-   </p>
-  </div> -->
 
 
-  <div *ngIf="activeTab === 2" >
-    
+  <div *ngIf="activeTab === 1">
 
-    
-    <p class="stats" *ngFor="let i of pokemonsTab.stats">
-      {{i.stat.name}}
-      <mat-progress-bar class="progress-bar"  mode="determinate" [value]="i.base_stat"></mat-progress-bar>
-        {{i.base_stat}}
 
-  
-      </p>
-    
+
+    <div class="stats" *ngFor="let i of pokemonsTab.stats">
+
+
+          <div class="name">{{i.stat.name}}</div>
+           <div class="base_stat">{{i.base_stat}}</div>
+
+
+
+        <mat-progress-bar class="progress-bar"  mode="determinate" [value]="i.base_stat"></mat-progress-bar>
+
+    </div>
+
+
   </div>
 
-<!-- 
-  <div *ngIf="activeTab === 3">
-    evolution
-  </div> -->
 
-  <div *ngIf="activeTab === 4">
+
+  <div *ngIf="activeTab === 2">
 
 
   <p *ngFor="let i of pokemonsTab.moves.slice(0,6)" >
     {{i.move.name}}
+
   </p>
 
 

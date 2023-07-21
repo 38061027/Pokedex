@@ -20,7 +20,25 @@
 .container .stats{
   display: flex;
   flex-direction: row;
-justify-content: center;
+justify-content: space-between;
 align-items: center;
 gap: 5px;
+
+
+}
+
+
+
+
+.container .base_stat{
+  width: 10%;
+
+}
+.container .name{
+  width: 40%;
+
+}
+.container .stats .progress-bar{
+  width: 40%;
+
 }
