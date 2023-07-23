@@ -14,6 +14,11 @@
 
     <div class="content-about" *ngIf="activeTab === 1" >
 
+      <p *ngFor="let group of species?.egg_groups">
+        {{ group.name }}
+      </p>
+
+
         <p>
           {{  pokemonsTab.height }}
         </p>
@@ -22,7 +27,11 @@
         <p>
           {{pokemonsTab.weight }}
         </p>
+
   </div>
+
+
+
 
 
 

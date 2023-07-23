@@ -33,9 +33,22 @@ url:string
  },
 
  height: number,
- weight:number
+ weight:number,
+
+ species: {
+  name: string,
+  url: string
+ }
 
 
+
+
+}
+
+
+export type Species ={
+
+  egg_groups:any
 
 
 }

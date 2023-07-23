@@ -28,9 +28,8 @@ export class PokemonService{
     return this.pokeData
   }
 
-  getSpeciesData(): Observable<any> {
-    const speciesUrl = 'https://pokeapi.co/api/v2/evolution-chain/1/';
-    return this.http.get<any>(speciesUrl);
+  getSpeciesData(speciesUrl: string): Observable<any> {
+    return this.http.get<any>(speciesUrl)
   }
 
 

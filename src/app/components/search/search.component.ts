@@ -46,7 +46,8 @@ ngOnInit(): void {
               moves: res.moves,
               abilities: res.abilities,
               height: res.height,
-              weight: res.weight
+              weight: res.weight,
+              species: res.species
             };
 
 
@@ -58,7 +59,6 @@ ngOnInit(): void {
 
 
       }
-
 
 
 
