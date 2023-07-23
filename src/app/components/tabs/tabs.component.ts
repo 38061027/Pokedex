@@ -22,9 +22,10 @@ export class TabsComponent implements OnChanges{
 
  ngOnChanges(changes: SimpleChanges): void {
     this.getSpecies();
+
  }
 
- 
+
  getSpecies() {
   this.pokemonService.getSpeciesData(this.pokemonsTab.species.url)
     .subscribe((res:Species) => {
@@ -34,8 +35,6 @@ export class TabsComponent implements OnChanges{
       };
     });
 }
-
-
 
 
   activeTab = 1;

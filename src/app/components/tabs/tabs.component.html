@@ -14,19 +14,32 @@
 
     <div class="content-about" *ngIf="activeTab === 1" >
 
-      <p *ngFor="let group of species?.egg_groups">
-        {{ group.name }}
-      </p>
 
+<div class="row first">
 
         <p>
-          {{  pokemonsTab.height }}
+         Weight {{  pokemonsTab.height /10 }} m
         </p>
-
 
         <p>
-          {{pokemonsTab.weight }}
+         Height {{pokemonsTab.weight /10}} Kg ({{(pokemonsTab.weight /10 * 2.2046).toFixed(1)}} lbs)
         </p>
+
+        <p>
+          Base Exp {{pokemonsTab.base_experience}}
+        </p>
+
+</div>
+
+<div class="row second">
+
+
+        <h4 class="brerding">Breeding</h4>
+
+        <p *ngFor="let group of species?.egg_groups">
+          {{ group.name }}
+        </p>
+</div>
 
   </div>
 

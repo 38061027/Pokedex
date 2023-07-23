@@ -25,13 +25,14 @@ height: 40%;
 
 }
 
+
 .card .card-bottom{
   height: 60%;
   background: #eee;
   width: 100%;
   border-top-right-radius: 1.2rem ;
   border-top-left-radius: 1.2rem;
-  
+
 }
 
 .card_stats{

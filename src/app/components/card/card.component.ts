@@ -35,7 +35,10 @@ export class CardComponent implements OnInit {
             abilities: res.abilities,
             height: res.height,
             weight: res.weight,
-            species: res.species
+            species: res.species,
+            base_experience: res.base_experience,
+          
+
           };
           this.pokemons.push(pokemon);
         },

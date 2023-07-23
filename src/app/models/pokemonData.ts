@@ -27,20 +27,22 @@ url:string
  }[],
 
  abilities:{
-  ability:{
-    name: string
-  }
- },
+
+   ability:{
+     name: string
+    },
+  },
+
 
  height: number,
  weight:number,
 
  species: {
   name: string,
-  url: string
+  url: string,
  }
 
-
+ base_experience:number
 
 
 }

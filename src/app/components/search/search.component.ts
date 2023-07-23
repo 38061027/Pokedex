@@ -47,7 +47,9 @@ ngOnInit(): void {
               abilities: res.abilities,
               height: res.height,
               weight: res.weight,
-              species: res.species
+              species: res.species,
+              base_experience: res.base_experience,
+
             };
 
 
