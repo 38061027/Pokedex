@@ -13,9 +13,13 @@ import { PokemonService } from 'src/app/services/pokemon.service';
 export class TabsComponent implements OnChanges{
 
   color: ThemePalette = 'warn';
+
+  activeTab = 1;
+
   @Input() pokemonsTab: PokemonData | any
 
   species: Species| any
+
 
   constructor(private pokemonService: PokemonService){}
 
@@ -37,7 +41,6 @@ export class TabsComponent implements OnChanges{
 }
 
 
-  activeTab = 1;
 
   showTab(tabNumber: number) {
     this.activeTab = tabNumber;

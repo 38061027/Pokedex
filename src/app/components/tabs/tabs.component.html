@@ -1,9 +1,9 @@
 <div class="container" >
   <ul>
-    <li (click)="showTab(1)"><a href="#">About</a></li>
-    <li (click)="showTab(2)"><a href="#">Base Stats</a></li>
-    <li (click)="showTab(3)"><a href="#">Moves</a></li>
-    <li (click)="showTab(4)"><a href="#">Abilities</a></li>
+    <li (click)="showTab(1)"><a>About</a></li>
+    <li (click)="showTab(2)"><a>Base Stats</a></li>
+    <li (click)="showTab(3)"><a>Moves</a></li>
+    <li (click)="showTab(4)"><a>Abilities</a></li>
   </ul>
 
 
@@ -83,7 +83,7 @@
 
 
     <div class="content-abilities" *ngIf="activeTab === 4" >
-        <p *ngFor="let u of pokemonsTab.abilities">
+        <p class="ability" *ngFor="let u of pokemonsTab.abilities">
           {{u.ability.name}}
         </p>
     </div>
