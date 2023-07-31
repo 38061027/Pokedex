@@ -9,7 +9,7 @@ import { PokemonData } from '../models/pokemonData';
 })
 export class PokemonService{
 
-  private baseUrl: string = ""
+baseUrl: string = ""
   private pokeData: PokemonData | any
 
 

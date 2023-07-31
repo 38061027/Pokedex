@@ -13,7 +13,6 @@ import { PokemonService } from 'src/app/services/pokemon.service';
 export class TabsComponent implements OnChanges{
 
   color: ThemePalette = 'warn';
-
   activeTab = 1;
 
   @Input() pokemonsTab: PokemonData | any
@@ -33,7 +32,7 @@ export class TabsComponent implements OnChanges{
  getSpecies() {
   this.pokemonService.getSpeciesData(this.pokemonsTab.species.url)
     .subscribe((res:Species) => {
-
+      console.log(res.egg_groups)
       this.species = {
         egg_groups: res.egg_groups
       };

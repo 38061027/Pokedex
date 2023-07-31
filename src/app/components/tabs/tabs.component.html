@@ -15,7 +15,7 @@
     <div class="content-about" *ngIf="activeTab === 1" >
 
 
-<div class="row first">
+<div class="row first" *ngIf="pokemonsTab">
 
         <p>
          Weight {{  pokemonsTab.height /10 }} m
@@ -31,12 +31,14 @@
 
 </div>
 
-<div class="row second">
+<div class="row second" *ngFor="let group of species?.egg_groups">
 
 
         <h4 class="brerding">Breeding</h4>
 
-        <p *ngFor="let group of species?.egg_groups">
+
+
+        <p >
           {{ group.name }}
         </p>
 </div>
