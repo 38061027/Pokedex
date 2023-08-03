@@ -50,6 +50,7 @@ url:string
 
 export type Species ={
 
+  color: any
   egg_groups:any
 
 

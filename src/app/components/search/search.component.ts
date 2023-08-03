@@ -1,5 +1,5 @@
-import { Component, OnInit, Output } from '@angular/core';
-import { PokemonData } from 'src/app/models/pokemonData';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { PokemonData, Species } from 'src/app/models/pokemonData';
 import { PokemonService } from 'src/app/services/pokemon.service';
 
 @Component({
@@ -8,6 +8,9 @@ import { PokemonService } from 'src/app/services/pokemon.service';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit{
+
+  color?: string
+
 
 
   @Output() pokemon: PokemonData | any ;
@@ -26,10 +29,12 @@ export class SearchComponent implements OnInit{
   }
 
 
+
 ngOnInit(): void {
-
-
     this.getPokemon('charizard')
+
+
+
 
   }
 
@@ -62,6 +67,11 @@ ngOnInit(): void {
 
       }
 
+
+      SpeciesColorEmitted(species: Species | any){
+        this.color = species.color
+
+      }
 
 
 

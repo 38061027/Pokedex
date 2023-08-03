@@ -25,6 +25,10 @@ height: 40%;
 
 }
 
+.card__title > h3{
+  color: #eee;
+  font-weight: bold;
+}
 
 .card .card-bottom{
   height: 60%;
@@ -42,10 +46,10 @@ height: 40%;
 }
 
 .card_stats .card__stats__type{
-  padding: 5px;
+  padding: 5px ;
   border-radius: 5px;
-  background-color: coral;
-
+  background-color: #eee;
+  font-weight: bold;
 }
 
 .input-search{

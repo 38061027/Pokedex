@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges, Output, EventEmitter } from '@angular/core';
 import { ThemePalette } from '@angular/material/core';
 import { ProgressBarMode } from '@angular/material/progress-bar';
 import { PokemonData, Species } from 'src/app/models/pokemonData';
@@ -19,6 +19,8 @@ export class TabsComponent implements OnChanges{
 
   species: Species| any
 
+  @Output() emitSpecies = new EventEmitter<Species | any>
+
 
   constructor(private pokemonService: PokemonService){}
 
@@ -32,10 +34,13 @@ export class TabsComponent implements OnChanges{
  getSpecies() {
   this.pokemonService.getSpeciesData(this.pokemonsTab.species.url)
     .subscribe((res:Species) => {
-      console.log(res.egg_groups)
+   
       this.species = {
-        egg_groups: res.egg_groups
+        egg_groups: res.egg_groups,
+        color: res.color
       };
+
+      this.emitSpecies.emit(this.species)
     });
 }
 

@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit, Output, Input } from '@angular/core';
 import { PokemonData } from 'src/app/models/pokemonData';
 import { PokemonService } from 'src/app/services/pokemon.service';
 
@@ -9,6 +9,8 @@ import { PokemonService } from 'src/app/services/pokemon.service';
 })
 export class CardComponent implements OnInit {
 @Output() pokemons: PokemonData[] = [];
+
+
 
   constructor(private pokemonService: PokemonService) {}
 
@@ -37,7 +39,7 @@ export class CardComponent implements OnInit {
             weight: res.weight,
             species: res.species,
             base_experience: res.base_experience,
-          
+
 
           };
           this.pokemons.push(pokemon);
