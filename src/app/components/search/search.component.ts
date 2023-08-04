@@ -16,14 +16,7 @@ export class SearchComponent implements OnInit{
   @Output() pokemon: PokemonData | any ;
 
   constructor (private pokemonService: PokemonService){
-    this.pokemon = { id: 0,name: '',
-    sprites: {
-      front_default: ''},
-    types: [],
 
-
-
-  };
 
 
   }
@@ -33,7 +26,7 @@ export class SearchComponent implements OnInit{
 ngOnInit(): void {
     this.getPokemon('charizard')
 
-
+ 
 
 
   }
@@ -56,6 +49,7 @@ ngOnInit(): void {
               base_experience: res.base_experience,
 
             };
+
 
 
 

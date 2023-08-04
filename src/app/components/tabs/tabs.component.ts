@@ -17,7 +17,9 @@ export class TabsComponent implements OnChanges{
 
   @Input() pokemonsTab: PokemonData | any
 
-  species: Species| any
+  @Output() species: Species | any
+
+
 
   @Output() emitSpecies = new EventEmitter<Species | any>
 
@@ -26,22 +28,22 @@ export class TabsComponent implements OnChanges{
 
 
  ngOnChanges(changes: SimpleChanges): void {
+  if (changes['pokemonsTab'] && changes['pokemonsTab'].currentValue) {
     this.getSpecies();
+  }
 
  }
 
-
  getSpecies() {
-  this.pokemonService.getSpeciesData(this.pokemonsTab.species.url)
-    .subscribe((res:Species) => {
-   
+  this.pokemonService.getSpeciesData(this.pokemonsTab.species.url).subscribe((res: Species) => {
+    if (res) {
       this.species = {
         egg_groups: res.egg_groups,
         color: res.color
       };
-
-      this.emitSpecies.emit(this.species)
-    });
+      this.emitSpecies.emit(this.species);
+    }
+  });
 }
 
 

@@ -12,10 +12,17 @@ export class CardComponent implements OnInit {
 
 
 
-  constructor(private pokemonService: PokemonService) {}
+  species: any
+
+  constructor(private pokemonService: PokemonService) {
+
+
+  }
 
   ngOnInit(): void {
     this.getPokemons();
+
+
 
   }
 

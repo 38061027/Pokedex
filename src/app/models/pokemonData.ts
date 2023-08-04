@@ -45,6 +45,8 @@ url:string
  base_experience:number
 
 
+
+
 }
 
 
