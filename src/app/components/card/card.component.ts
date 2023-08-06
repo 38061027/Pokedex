@@ -1,6 +1,8 @@
+import { PokemonData, Species } from './../../models/pokemonData';
 import { Component, OnInit, Output, Input } from '@angular/core';
-import { PokemonData } from 'src/app/models/pokemonData';
 import { PokemonService } from 'src/app/services/pokemon.service';
+
+
 
 @Component({
   selector: 'app-card',
@@ -8,13 +10,12 @@ import { PokemonService } from 'src/app/services/pokemon.service';
   styleUrls: ['./card.component.css'],
 })
 export class CardComponent implements OnInit {
-@Output() pokemons: PokemonData[] = [];
+  @Output() pokemons: PokemonData[]  = [];
 
 
+  constructor(
+    private  pokemonService: PokemonService) {
 
-  species: any
-
-  constructor(private pokemonService: PokemonService) {
 
 
   }
@@ -22,19 +23,29 @@ export class CardComponent implements OnInit {
   ngOnInit(): void {
     this.getPokemons();
 
-
-
   }
 
-
   getPokemons(): void {
-    const pokemonNames: string[] = ['pikachu', 'machamp', 'venusaur', 'arbok' ,'blastoise','golbat','arceus','lugia', 'mewtwo', 'palkia', 'beedrill', 'groudon'];
+    const pokemonNames: string[] = [
+      'pikachu',
+      'machamp',
+      'venusaur',
+      'arbok',
+      'blastoise',
+      'golbat',
+      'arceus',
+      'lugia',
+      'mewtwo',
+      'palkia',
+      'beedrill',
+      'groudon',
+    ];
 
-    pokemonNames.forEach((name) => {
+    pokemonNames.filter((name) => {
       this.pokemonService.getPokemon(name).subscribe({
         next: (res) => {
 
-          const pokemon: PokemonData = {
+        const pokemon: PokemonData = {
             id: res.id,
             name: res.name,
             sprites: res.sprites,
@@ -46,8 +57,6 @@ export class CardComponent implements OnInit {
             weight: res.weight,
             species: res.species,
             base_experience: res.base_experience,
-
-
           };
           this.pokemons.push(pokemon);
         },
@@ -55,11 +64,6 @@ export class CardComponent implements OnInit {
       });
     });
   }
-
-
-
-
-
 
 
 }

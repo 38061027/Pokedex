@@ -9,15 +9,13 @@ import { PokemonService } from 'src/app/services/pokemon.service';
 })
 export class SearchComponent implements OnInit{
 
-  color?: string
+ color?: string
 
 
 
   @Output() pokemon: PokemonData | any ;
 
   constructor (private pokemonService: PokemonService){
-
-
 
   }
 
@@ -26,7 +24,7 @@ export class SearchComponent implements OnInit{
 ngOnInit(): void {
     this.getPokemon('charizard')
 
- 
+
 
 
   }
@@ -52,8 +50,6 @@ ngOnInit(): void {
 
 
 
-
-
           },
           error: (err) => console.log('Não consigui achar nem com visão raio X', err),
         });
@@ -65,7 +61,10 @@ ngOnInit(): void {
       SpeciesColorEmitted(species: Species | any){
         this.color = species.color
 
-      }
+
+       }
+
+
 
 
 

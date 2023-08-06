@@ -12,6 +12,7 @@ import { MaterialModule } from './material/material/material.module';
 import { TabsComponent } from './components/tabs/tabs.component';
 
 
+
 const COMPONENTS = [
   CardComponent,
   SearchComponent
@@ -32,7 +33,7 @@ const COMPONENTS = [
     FormsModule,
     BrowserAnimationsModule,
     MaterialModule,
-    
+
   ],
   providers: [],
   bootstrap: [AppComponent]

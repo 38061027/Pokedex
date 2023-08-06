@@ -37,6 +37,7 @@ export class TabsComponent implements OnChanges{
  getSpecies() {
   this.pokemonService.getSpeciesData(this.pokemonsTab.species.url).subscribe((res: Species) => {
     if (res) {
+ 
       this.species = {
         egg_groups: res.egg_groups,
         color: res.color
