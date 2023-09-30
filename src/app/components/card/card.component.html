@@ -8,15 +8,15 @@
 <div class="card__container">
 
 
-  <div class="card__pokemon"  >
-    <div class="card__pokemon__ind" *ngFor="let pokemon of pokemons" >
+  <div class="card__pokemon" >
+    <div class="card__pokemon__ind" *ngFor="let pokemon of pokemons" [style.background-color]="colors">
 
 
 
-          <div class="card__title"  >
+          <div class="card__title" >
             <h3>{{pokemon?.name}}</h3>
           </div>
-          <div class="body_card">
+          <div class="body_card" >
             <div class="card_stats">
               <span class="card__stats__type" *ngFor="let t of pokemon.types">
                 {{t.type.name}}

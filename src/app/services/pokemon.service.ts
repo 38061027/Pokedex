@@ -33,7 +33,7 @@ baseUrl: string = ""
     return this.pokeData
   }
 
-  getSpeciesData(speciesUrl: string): Observable<any> {
+  getSpeciesData(speciesUrl: string ): Observable<any> {
     return this.http.get<any>(speciesUrl)
   }
 

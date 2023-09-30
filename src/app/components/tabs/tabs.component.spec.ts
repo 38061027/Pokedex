@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing'
 import { TabsComponent } from './tabs.component';
+import { PokemonService } from 'src/app/services/pokemon.service';
+import { of } from 'rxjs';
 
 
 describe('TabsComponent', () => {
@@ -25,6 +27,7 @@ describe('TabsComponent', () => {
     component = fixture.componentInstance;
     fixture.detectChanges();
 
+
   });
 
   it('should create', () => {
@@ -43,7 +46,7 @@ describe('TabsComponent', () => {
   });
 
   it('Deve chamar getSpecies quando pokemonsTab faz mudanças', () => {
-    // Create a mock value for pokemonsTab
+
     const mockPokemonsTab = {
       species: {
         url: 'https://pokeapi.co/api/v2/pokemon-species/1/'
@@ -66,5 +69,6 @@ describe('TabsComponent', () => {
 
     expect(component.getSpecies).toHaveBeenCalled();
   });
+
 
 });

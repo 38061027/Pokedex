@@ -49,9 +49,19 @@ var CardComponent = /** @class */ (function () {
                         base_experience: res.base_experience
                     };
                     _this.pokemons.push(pokemon);
+                    _this.speciesUrl = res.species.url;
+                    _this.getColor();
                 },
                 error: function (err) { return console.log('Não consegui encontrar o Pokémon', err); }
             });
+        });
+    };
+    CardComponent.prototype.getColor = function () {
+        var _this = this;
+        this.pokemonService.getSpeciesData(this.speciesUrl).subscribe(function (res) {
+            if (res) {
+                _this.colors = res.color;
+            }
         });
     };
     __decorate([

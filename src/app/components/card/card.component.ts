@@ -1,4 +1,5 @@
-import { PokemonData, Species } from './../../models/pokemonData';
+import { Species } from 'src/app/models/pokemonData';
+import { PokemonData } from './../../models/pokemonData';
 import { Component, OnInit, Output, Input } from '@angular/core';
 import { PokemonService } from 'src/app/services/pokemon.service';
 
@@ -10,18 +11,22 @@ import { PokemonService } from 'src/app/services/pokemon.service';
   styleUrls: ['./card.component.css'],
 })
 export class CardComponent implements OnInit {
-  @Output() pokemons: PokemonData[]  = [];
+  @Output() pokemons: PokemonData[] =[];
+  speciesUrl!: string
+
+  colors!: string[]
+
+
 
 
   constructor(
     private  pokemonService: PokemonService) {
-
-
-
   }
 
   ngOnInit(): void {
     this.getPokemons();
+
+
 
   }
 
@@ -59,11 +64,28 @@ export class CardComponent implements OnInit {
             base_experience: res.base_experience,
           };
           this.pokemons.push(pokemon);
+          this.speciesUrl = res.species.url;
+          this.getColor();
+
         },
         error: (err) => console.log('Não consegui encontrar o Pokémon', err),
       });
     });
+
+
+
   }
 
+  getColor(){
+    this.pokemonService.getSpeciesData(this.speciesUrl).subscribe((res:any)=>{
+
+      if(res){
+        this.colors = res.color
+        
+
+      }
+
+    })
+  }
 
 }
