@@ -9,7 +9,7 @@
 
 
   <div class="card__pokemon" >
-    <div class="card__pokemon__ind" *ngFor="let pokemon of pokemons" [style.background-color]="colors">
+    <div class="card__pokemon__ind" *ngFor="let pokemon of pokemons;let i = index" [style.background-color]="colors[i]">
 
 
 

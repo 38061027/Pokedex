@@ -12,6 +12,7 @@ var CardComponent = /** @class */ (function () {
     function CardComponent(pokemonService) {
         this.pokemonService = pokemonService;
         this.pokemons = [];
+        this.colors = [];
     }
     CardComponent.prototype.ngOnInit = function () {
         this.getPokemons();
@@ -60,7 +61,10 @@ var CardComponent = /** @class */ (function () {
         var _this = this;
         this.pokemonService.getSpeciesData(this.speciesUrl).subscribe(function (res) {
             if (res) {
-                _this.colors = res.color;
+                _this.colors.push(res.color.name);
+            }
+            else {
+                console.error('Não foi possível obter a cor do Pokémon.');
             }
         });
     };

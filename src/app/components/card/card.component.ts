@@ -14,7 +14,7 @@ export class CardComponent implements OnInit {
   @Output() pokemons: PokemonData[] =[];
   speciesUrl!: string
 
-  colors!: string[]
+  colors: string[] =[]
 
 
 
@@ -77,15 +77,13 @@ export class CardComponent implements OnInit {
   }
 
   getColor(){
-    this.pokemonService.getSpeciesData(this.speciesUrl).subscribe((res:any)=>{
-
-      if(res){
-        this.colors = res.color
-        
-
+    this.pokemonService.getSpeciesData(this.speciesUrl).subscribe((res: any) => {
+      if (res) {
+        this.colors.push(res.color.name);
+      } else {
+        console.error('Não foi possível obter a cor do Pokémon.');
       }
-
-    })
+    });
   }
 
 }
